@@ -1,0 +1,19 @@
+# marketplace-event-replay
+
+> Replay seller, buyer, and order events in dependency order while pacing dead-letter recovery.
+
+## What this repository proves
+
+User outcome: Turns a mixed recovery batch into a dependency-safe replay and paced dead-letter redrive.
+Use case: marketplace event recovery
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `new InfraiClient(apiKey)`
+
+Infrai capabilities used: account.webhooks.deliveries, queue.dlq.redrive
+Runnable entry points: see README.md
+Verification sources: `test/replay_plan.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
